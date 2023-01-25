@@ -1,0 +1,92 @@
+* {
+    margin: 10px;
+    padding: 1px;
+    font-family: fantasy;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    background-color: darkslateblue;
+}
+
+.nav-button {
+    display: block;
+    margin: 0;
+    font-size: 1.4rem;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: antiquewhite;
+    text-decoration-line: unset;
+}
+
+.nav-button:hover {
+    background-color: rgb(56, 47, 117);
+}
+
+.active {
+    background-color: lightblue;
+    color: darkslategray;
+}
+
+.active:hover {
+    background-color: lightblue;
+    color: darkslategray;
+}
+
+header {
+    background-color: royalblue;
+    color: beige;
+    margin-top: 1rem;
+    min-width: auto;
+    height: fit-content;
+    border: dotted gold 10px;
+}
+
+header img {
+    float: right;
+}
+
+#myskills {
+    font-size: 1.8rem;
+    font-family: "Impact";
+    color: fuchsia;
+}
+
+
+.subheading {
+    text-decoration: underline rebeccapurple 2px;
+    font-style: italic;
+}
+
+.goal-li {
+    color: fuchsia;
+    height: 12;
+}
+
+.box1 {
+    background-color: aqua;
+    margin: 15px 1rem;
+}
+
+input[type="submit"] {
+    padding: 8px;
+    border: none;
+    background-color: darkblue;
+    color: whitesmoke;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+.clickable:active {
+    transform: translateY(5px);
+}

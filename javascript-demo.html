@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Demo</title>
+
+    <script defer>
+        // This is a JavaScript comment!
+
+        // Variables
+        var title = "The Truman Show"    //vulnerable to "hoisting" where all script goes to the top.
+
+        let director = "Peter Weir"
+        const releaseYear = 1998
+
+        // Constant arrays and objects can have their elements changed, but not the overall structure
+        const characters = []
+        characters.push("Truman Burbank")
+        console.log(characters[0])
+
+        // Objects
+        const actor = {}
+        actor.FirstName = "Jim"
+        actor.LastName = "Carrey"
+        actor.getFullName = function () {
+            return this.FirstName + " " + this.LastName
+        }
+
+        const actress = {
+            FirstName: "Laura",
+            LastName: "Linney",
+            getFullName() {
+                return this.FirstName + " " + this.LastName
+            }
+        }
+
+        function greeting() {
+            // if you write to the document after the page loads, then the content is replaced.
+            window.alert("Good morning!\nAnd if I don't see ya\nGood afternoon, good evening and good night!")
+
+            let heading = document.getElementById("title")
+            heading.innerText = "Nice to meet ya"
+        }
+
+        function popUpText() {
+            let popUpElement = document.getElementById("pop-up")
+
+            if (popUpElement) {
+                popUpElement.remove()
+            }
+            else {
+                let pElement = document.createElement("p")
+                let pText = document.createTextNode(`Starring ${actor.getFullName()}`)
+                pElement.appendChild(pText)
+                pElement.id= "pop-up"
+                let titleContainer = document.getElementById("title-container")
+                titleContainer.appendChild(pElement)
+            }
+        }
+
+        function checkLettersOnly() {
+            let inputText = document.getElementById("letters-check")
+            if (!inputText.value.match(/^[A-Za-z]+$/)) {
+                alert("The string should only contain letters")
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="title-container">
+        <h1 id="title" onmouseover="popUpText()">Hello There</h1>
+    </div>
+    <p>How are you?</p>
+
+    <button onclick="greeting()">Click Me</button>
+
+    <form onsubmit="checkLettersOnly()">
+        <label for="letters-check">Letters only: </label>
+        <input id="letters-check" type="text" name="letters-check">
+        <input class="clickable btn" type="submit" value="Check Text">
+    </form>
+</body>
+
+</html>
