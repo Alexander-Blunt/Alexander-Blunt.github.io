@@ -48,10 +48,8 @@ header {
     min-width: auto;
     height: fit-content;
     border: dotted gold 10px;
-}
-
-header img {
-    float: right;
+    display: flex;
+    justify-content: space-between;
 }
 
 #myskills {
