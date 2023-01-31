@@ -41,11 +41,14 @@ nav {
     color: darkslategray;
 }
 
+.container {
+    max-width: 70rem;
+}
+
 header {
     background-color: royalblue;
     color: beige;
     margin-top: 1rem;
-    min-width: auto;
     height: fit-content;
     border: dotted gold 10px;
     display: flex;
